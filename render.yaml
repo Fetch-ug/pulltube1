@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: pulltube
+    runtime: node
+    buildCommand: bash build.sh
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+    disk:
+      name: tmp-storage
+      mountPath: /tmp
+      sizeGB: 1
